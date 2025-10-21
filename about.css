@@ -1,0 +1,225 @@
+/* Import Amaranth font */
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
+
+/* ============================
+   Base About Section Styling
+============================ */
+.about-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  font-family: 'Amaranth', sans-serif;
+  overflow: hidden;
+  padding: 70px 0;
+  background-color: #E6EDC8; /* light green tone to match figma */
+}
+
+/* ============================
+   Background Layers
+============================ */
+.bg-logo {
+  position: absolute;
+  inset: 0;
+  background: url('img/logo.png') center center/contain no-repeat;
+  opacity: 0.2; /* faint logo */
+  z-index: 1;
+}
+
+.color-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: #ACC16C;
+  opacity: 0.2;
+  z-index: 2;
+}
+
+/* ============================
+   Content Container
+============================ */
+.about-container {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1100px;
+  margin: 0 auto;
+  gap: 50px;
+}
+
+/* ============================
+   Title
+============================ */
+.about-title {
+  font-size: 44px;
+  font-weight: bold;
+  color: #1e3d1e;
+  margin-top:10px;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* ============================
+   Top Layout
+============================ */
+.about-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+/* ============================
+   About Boxes (Glass Blur Effect)
+============================ */
+.about-box { 
+  flex: 1;
+  min-width: 400px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 2px solid rgba(47, 93, 52, 0.4);
+  border-radius: 18px;
+  padding: 35px 45px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  text-align: left;
+  color: #1e3d1e;
+  transition: all 0.3s ease;
+
+  /* Animation */
+  opacity: 0; /* start invisible */
+  transform: translateX(-100px); /* start left off-screen */
+  animation: slideIn 10s forwards; /* 1s duration, keep final state */
+}
+
+/* Keyframes for sliding in from left */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* final position */
+  }
+}
+
+
+.about-box:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.02);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.2);
+}
+
+.about-box h3 {
+  font-size: 26px;
+  margin-bottom: 8px;
+  color: #1e3d1e;
+}
+
+.about-box h4 {
+  font-size: 20px;
+  color: #2e572e;
+  margin-bottom: 12px;
+}
+
+.about-box p {
+  font-size: 18px;
+  line-height: 1.8;
+  color: #1e3d1e;
+}
+
+/* ============================
+   Doctor Image
+============================ */
+.about-image img {
+  width: 360px;              /* increased from 300px → 360px */
+  height: 360px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #1e3d1e; /* slightly thicker for balance */
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ============================
+   Bottom Text Box
+============================ */
+.about-bottom {
+  background: rgba(255, 255, 255, 0.18);
+  border: 2px solid rgba(47, 93, 52, 0.4);
+  border-radius: 18px;
+  padding: 35px 45px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  text-align: left;
+  color: #1e3d1e;
+  font-size: 18px;
+  line-height: 1.8;
+  width: 100%;
+  max-width: 950px;
+
+  /* Animation */
+  opacity: 0; /* start invisible */
+  transform: translateX(-100px); /* start left off-screen */
+  animation: slideInBottom 10s forwards; /* 1s duration, keep final state */
+}
+
+/* Keyframes for sliding in from left */
+@keyframes slideInBottom {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* final position */
+  }
+}
+
+
+.about-bottom:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.02);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================
+   Responsive Design
+============================ */
+@media (max-width: 992px) {
+  .about-top {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .about-box {
+    text-align: center;
+  }
+
+  .about-image img {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-box,
+  .about-bottom {
+    padding: 25px;
+    font-size: 16px;
+  }
+
+  .about-title {
+    font-size: 36px;
+  }
+}
