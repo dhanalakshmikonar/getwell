@@ -1,0 +1,288 @@
+/* Import Amaranth font */
+@import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
+
+/* Service Section */
+.service-cards {
+  font-family: 'Amaranth', sans-serif;
+  text-align: center; /* centers heading */
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+/* Section Heading */
+.section-heading {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #2E5932; /* dark green */
+  margin-bottom: 0px;
+}
+
+/* Card Base */
+.card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Card Image */
+.card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+/* Image zoom on hover */
+.card:hover img {
+  transform: scale(1.1);
+}
+
+/* Overlay always visible */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 60, 30, 0.85); /* semi-transparent dark green overlay */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  opacity: 1; /* always visible */
+}
+
+/* Overlay title */
+.card-overlay h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+/* Circle Icon */
+.card-icon {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #7fbf4d; /* green circle */
+  color: #fff;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 22px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.25),
+              inset 0 2px 6px rgba(255, 255, 255, 0.2),
+              inset 0 -3px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Circle Icon hover effect */
+.card:hover .card-icon {
+  transform: translateX(-50%) scale(1.15);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.35),
+              inset 0 3px 8px rgba(255, 255, 255, 0.25),
+              inset 0 -4px 8px rgba(0, 0, 0, 0.25);
+}
+
+/* Circle Icon Image */
+.card-icon img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+/* Circle Icon image hover */
+.card:hover .card-icon img {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 4px rgba(255, 255, 200, 0.8));
+}
+
+/* Center entire View More section */
+.view-more-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers children horizontally */
+  justify-content: center;
+  width: 100%; /* ensure full width */
+  margin-top: 30px;
+}
+
+/* Disease Grid: 4 columns x 3 rows, centered */
+.disease-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  gap: 15px;
+  width: 100%;         /* full width of parent */
+  max-width: 1200px;   /* limit max width */
+  justify-content: center; /* center grid items */
+}
+
+/* Disease Boxes */
+.disease-box {
+  background: #F0F9F1;
+  color: #2E5932;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: 'Amaranth', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.disease-box:hover {
+  transform: translateY(-3px);
+  background: #D9F0D9;
+}
+
+/* View More Button */
+.view-more-link {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-family: 'Amaranth', sans-serif;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #7fbf4d, #2E5932);
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px; /* space between grid and button */
+}
+
+.view-more-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,0.2);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.view-more-link:hover::after {
+  width: 200%;
+  height: 500%;
+}
+
+.view-more-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* Hide disease list initially */
+.disease-list {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Show disease list */
+.disease-list.show {
+  display: block;
+  opacity: 1;
+}
+
+/* Center entire View More section */
+.view-more-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centers children horizontally */
+  justify-content: center;
+  width: 100%; /* ensure full width */
+  margin-top: 30px;
+}
+
+/* Disease Grid: 4 columns x 3 rows, centered */
+.disease-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 4 columns */
+  gap: 15px;
+  width: 100%;         /* full width of parent */
+  max-width: 1200px;   /* limit max width */
+  justify-content: center; /* center grid items */
+}
+
+/* Disease Boxes */
+.disease-box {
+  background: #F0F9F1;
+  color: #2E5932;
+  padding: 12px;
+  border-radius: 8px;
+  font-family: 'Amaranth', sans-serif;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.disease-box:hover {
+  transform: translateY(-3px);
+  background: #D9F0D9;
+}
+
+/* View More Button */
+.view-more-link {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.2rem;
+  font-family: 'Amaranth', sans-serif;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #7fbf4d, #2E5932);
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px; /* space between grid and button */
+}
+
+.view-more-link::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,0.2);
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: width 0.4s ease, height 0.4s ease;
+}
+
+.view-more-link:hover::after {
+  width: 200%;
+  height: 500%;
+}
+
+.view-more-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* Hide disease list initially */
+.disease-list {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Show disease list */
+.disease-list.show {
+  display: block;
+  opacity: 1;
+}
