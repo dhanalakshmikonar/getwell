@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Getwell Herbal Care</title>
+ <link rel="icon" type="image/png" href="img/logo.png">
+<title>Getwell Herbal Care</title>
+
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Montaga&display=swap" rel="stylesheet">
 </head>
@@ -18,9 +20,10 @@
       <nav>
         <ul class="nav-links">
           <li><a href="#" class="active">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Service</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="index.html#services">Service</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -64,9 +67,13 @@
  
 </section>
 
- <section class="about-section">
-  <div class="bg-logo"></div>
-  <div class="color-overlay"></div>
+
+<section class="about-section" id="about">
+  <!-- Background image overlay for About section only -->
+  <div class="bg-overlay-image">
+   
+
+  </div>
 
   <div class="about-container">
     <h2 class="about-title">About Us</h2>
@@ -76,9 +83,10 @@
         <h3>Dr. M. Alex Pandian, BSMS, MD(S)</h3>
         <h4>Founder & Consultant – GetWell Herbal Care</h4>
         <p>
-          GetWell Herbal Care is a Siddha-based wellness clinic founded by Dr. M. Alex Pandian,
-          a seasoned expert in gastrointestinal and liver health. With over 8 years of clinical
-          experience, he integrates traditional herbal wisdom with modern lifestyle-based care.
+          GetWell Herbal Care is a Siddha-based wellness clinic founded by
+          Dr. M. Alex Pandian, a seasoned expert in gastrointestinal and liver
+          health. With over 8 years of clinical experience, he integrates
+          traditional herbal wisdom with modern lifestyle-based care.
         </p>
       </div>
 
@@ -87,21 +95,54 @@
       </div>
     </div>
 
+    
     <div class="about-bottom">
       <p>
-        His core expertise lies in managing chronic conditions such as GERD, IBS, IBD, fatty liver,
-        and pancreatic issues through safe, non-invasive methods. He emphasizes preventive care,
-        patient education, and natural healing. At GetWell Herbal Care, we are committed to
-        delivering personalized Siddha solutions, rooted in ancient Tamil medical knowledge and
-        backed by modern clinical experience.
+        His core expertise lies in managing chronic conditions such as GERD,
+        IBS, IBD, fatty liver, and pancreatic issues through safe,
+        non-invasive methods. He emphasizes preventive care, patient
+        education, and natural healing. At GetWell Herbal Care, we are
+        committed to delivering personalized Siddha solutions, rooted in
+        ancient Tamil medical knowledge and backed by modern clinical
+        experience.
       </p>
     </div>
   </div>
-  <link rel="stylesheet" href="about.css"> 
+ 
+
+  <!-- Consultation Info -->
+  <div class="about-consult">
+    <h3 class="consult-heading">
+      “Expert Siddha consultation available online —<br> heal naturally from anywhere in the world.”
+    </h3>
+
+    
+    <div class="consult-content">
+      <div class="consult-text" style="position: relative; left: 170px;top: 70px;">
+        <p>
+          Getwell Herbal Care blends the ancient wisdom of Siddha medicine with
+          the convenience of modern technology to deliver trusted healthcare
+          both online and offline. Led by a skilled Siddha doctor with years of
+          experience treating patients across India and abroad, we specialize
+          in providing natural, personalized care for digestive and
+          gastro-related disorders. Our digital consultation platform enables
+          patients worldwide to connect easily, receive expert diagnosis, and
+          access authentic Siddha remedies — all from the comfort of their
+          home.
+        </p>
+      </div>
+
+      <div class="consult-image">
+        <img src="img/about2.jpg" alt="Online Siddha Consultation">
+      </div>
+    </div>
+  </div>
 </section>
 
+<link rel="stylesheet" href="about.css">
 
-<section class="gallery-section">
+
+<section class="gallery-section" id="gallery">
   <h2 class="gallery-title">Gallery</h2>
 
   <div class="gallery-wrapper">
@@ -120,7 +161,7 @@
 </section>
 
 
-<section class="service-cards"style="margin-top: 0%; padding-top: 0%;">
+<section class="service-cards"style="margin-top: 0%; padding-top: 0%;" id="services">
   <h2 class="section-heading">Services</h2>
 </section>
 

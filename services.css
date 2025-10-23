@@ -249,6 +249,7 @@
   position: relative;
   overflow: hidden;
   margin-top: 20px; /* space between grid and button */
+  align-items: center;
 }
 
 .view-more-link::after {

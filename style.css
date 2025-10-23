@@ -23,10 +23,9 @@ body {
 /* Logo inside navbar */
 .logo {
   width: 45px;              /* fixed width */
-  height: px;             /* fixed height */
+  height: 45px;             /* fixed height */
   object-fit: cover;        /* maintain aspect ratio */
   border-radius: 50%;       /* circular logo */
-  border: 1px solid #acc16c;
   background: #fff;
   margin-right: 0px;       /* spacing from nav links */
 }
@@ -62,7 +61,7 @@ body {
 
 .nav-links li a:hover,
 .nav-links li a.active {
-  color: #acc16c;
+  color: #b2e81f;
 }
 
 /* ---------------- SLIDER ---------------- */
@@ -88,7 +87,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  padding: 50px 100px;
+  padding: 20px 80px;
   box-sizing: border-box;
 }
 

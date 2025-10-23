@@ -1,225 +1,219 @@
-/* Import Amaranth font */
+/* Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
 
-/* ============================
-   Base About Section Styling
-============================ */
+/* ===============================
+   About Section Base
+=============================== */
 .about-section {
   position: relative;
   width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
   font-family: 'Amaranth', sans-serif;
   overflow: hidden;
-  padding: 70px 0;
-  background-color: #E6EDC8; /* light green tone to match figma */
+  padding: 80px 20px;
+  color: #1a1a1a;
+
+  /* Fixed background */
+  background: url('img/aboutbg.jpg') center center / cover no-repeat fixed;
 }
 
-/* ============================
-   Background Layers
-============================ */
-.bg-logo {
-  position: absolute;
-  inset: 0;
-  background: url('img/logo.png') center center/contain no-repeat;
-  opacity: 0.2; /* faint logo */
-  z-index: 1;
-}
-
-.color-overlay {
-  position: absolute;
-  inset: 0;
-  background-color: #ACC16C;
-  opacity: 0.2;
-  z-index: 2;
-}
-
-/* ============================
+/* ===============================
    Content Container
-============================ */
+=============================== */
 .about-container {
   position: relative;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-width: 1100px;
+  z-index: 1;
+  max-width: 1200px;
   margin: 0 auto;
-  gap: 50px;
 }
 
-/* ============================
-   Title
-============================ */
+/* Section Title */
 .about-title {
-  font-size: 44px;
-  font-weight: bold;
-  color: #1e3d1e;
-  margin-top:10px;
-  margin-bottom: 10px;
-  letter-spacing: 0.5px;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 50px;
+  color: #2E5932;
+  font-weight: 700;
 }
 
-/* ============================
-   Top Layout
-============================ */
+/* ===============================
+   Top Section (Left Box + Right Image)
+=============================== */
 .about-top {
   display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
   justify-content: center;
   align-items: center;
-  gap: 60px;
-  flex-wrap: wrap;
-  width: 100%;
 }
 
-/* ============================
-   About Boxes (Glass Blur Effect)
-============================ */
-.about-box { 
-  flex: 1;
-  min-width: 400px;
-  background: rgba(255, 255, 255, 0.18);
-  border: 2px solid rgba(47, 93, 52, 0.4);
+.about-box {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(47, 93, 52, 0.3);
   border-radius: 18px;
-  padding: 35px 45px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  text-align: left;
-  color: #1e3d1e;
-  transition: all 0.3s ease;
-
-  /* Animation */
-  opacity: 0; /* start invisible */
-  transform: translateX(-100px); /* start left off-screen */
-  animation: slideIn 10s forwards; /* 1s duration, keep final state */
+  padding: 30px 25px;
+  max-width: 700px;
+  flex: 1;
+  min-width: 300px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
 }
-
-/* Keyframes for sliding in from left */
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateX(-100px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0); /* final position */
-  }
-}
-
 
 .about-box:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.02);
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.2);
+  transform: translateY(-10px);
 }
 
 .about-box h3 {
-  font-size: 26px;
-  margin-bottom: 8px;
-  color: #1e3d1e;
+  font-size: 27px;
+  margin-bottom: 10px;
+  color: #2E5932;
 }
 
 .about-box h4 {
-  font-size: 20px;
-  color: #2e572e;
-  margin-bottom: 12px;
+  font-size: 23px;
+  margin-bottom: 15px;
+  font-weight: 400;
+  color: #4b6b3a;
 }
 
 .about-box p {
-  font-size: 18px;
-  line-height: 1.8;
-  color: #1e3d1e;
+  font-size: 20px;
+  line-height: 1.6;
+  color: #333;
 }
 
-/* ============================
-   Doctor Image
-============================ */
+/* Right Circle Image */
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  min-width: 250px;
+}
+
 .about-image img {
-  width: 360px;              /* increased from 300px → 360px */
-  height: 360px;
+  width: 350px;
+  height: 350px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #1e3d1e; /* slightly thicker for balance */
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.25);
+  border: 5px solid #141807;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  position: relative; /* required for left/right movement */
+  animation: slideLeftRight 3s ease-in-out infinite alternate;
 }
 
-
-/* ============================
-   Bottom Text Box
-============================ */
-.about-bottom {
-  background: rgba(255, 255, 255, 0.18);
-  border: 2px solid rgba(47, 93, 52, 0.4);
-  border-radius: 18px;
-  padding: 35px 45px;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  text-align: left;
-  color: #1e3d1e;
-  font-size: 18px;
-  line-height: 1.8;
-  width: 100%;
-  max-width: 950px;
-
-  /* Animation */
-  opacity: 0; /* start invisible */
-  transform: translateX(-100px); /* start left off-screen */
-  animation: slideInBottom 10s forwards; /* 1s duration, keep final state */
-}
-
-/* Keyframes for sliding in from left */
-@keyframes slideInBottom {
+@keyframes slideLeftRight {
   0% {
-    opacity: 0;
-    transform: translateX(-100px);
+    left: -50px; /* starting position */
   }
   100% {
-    opacity: 1;
-    transform: translateX(0); /* final position */
+    left: 50px; /* ending position */
   }
 }
 
 
-.about-bottom:hover {
-  background: rgba(255, 255, 255, 0.25);
-  transform: scale(1.02);
-  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.2);
+.about-image img:hover {
+  transform: scale(1.05);
 }
 
-/* ============================
+/* ===============================
+   Bottom Description Box
+=============================== */
+.about-bottom {
+  margin-top: 50px;
+  gap: 40px;
+  background: rgba(255,255,255,0.18);
+  border: 2px solid rgba(47,93,52,0.3);
+  border-radius: 18px;
+  padding: 35px 45px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.1);
+  font-size: 21px;
+  line-height: 1.6;
+}
+
+/* ===============================
+   Consultation Section
+=============================== */
+.about-consult {
+  margin-top: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.consult-heading {
+  text-align: center;
+  font-size: 27px;
+  margin-bottom: 40px;
+  color: #2E5932;
+}
+
+.consult-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
+}
+
+.consult-text {
+  flex: 1;
+  min-width: 300px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 25px;
+  border: 1px solid rgba(47,93,52,0.3);
+}
+
+.consult-text p {
+  line-height: 1.6;
+  font-size: 21px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.consult-image {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+}
+
+.consult-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.consult-image img:hover {
+  transform: scale(1.05);
+}
+
+/* ===============================
    Responsive Design
-============================ */
-@media (max-width: 992px) {
-  .about-top {
+=============================== */
+@media screen and (max-width: 992px) {
+  .about-top, .consult-content {
     flex-direction: column;
-    gap: 40px;
   }
 
-  .about-box {
-    text-align: center;
-  }
-
-  .about-image img {
-    width: 240px;
-    height: 240px;
+  .about-image img, .consult-image img {
+    width: 220px;
+    height: 220px;
   }
 }
 
-@media (max-width: 600px) {
-  .about-box,
-  .about-bottom {
-    padding: 25px;
-    font-size: 16px;
-  }
-
+@media screen and (max-width: 480px) {
   .about-title {
-    font-size: 36px;
+    font-size: 28px;
+  }
+  .about-box h3 {
+    font-size: 20px;
+  }
+  .about-box h4 {
+    font-size: 16px;
   }
 }
