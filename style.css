@@ -202,7 +202,7 @@ body {
 
 .circle p {
   font-family: 'Amaranth', sans-serif;
-  font-size: 15px;
+  font-size: 20px;
   line-height: 1.5;
   color: #121f02;
   max-width: 85%;
@@ -228,4 +228,69 @@ body {
   color: #fff;
 }
 
+.social-row {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column; /* stack vertically */
+  align-items: center;
+  gap: 10px; /* space between icons */
+  z-index: 1000;
+}
 
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #2e5932; /* Herbal green */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: translateY(-3px);
+  background-color: #85b24a; /* lighter green on hover */
+}
+
+/* Optional platform-specific colors */
+.social-icon.facebook:hover {
+  background-color: #1877f2;
+}
+.social-icon.instagram:hover {
+  background-color: #e4405f;
+}
+.social-icon.linkedin:hover {
+  background-color: #0077b5;
+}
+
+.footer-section {
+  position: relative;
+  background-image: url("img/Light green abstract background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px 0;
+  color: #fff;
+  text-align: center;
+}
+
+.footer-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* overlay */
+  z-index: 1;
+}
+
+.footer-bottom {
+  position: relative;
+  z-index: 2;
+  font-size: 14px;
+  margin: 0;
+}
