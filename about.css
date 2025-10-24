@@ -56,8 +56,10 @@
   flex: 1;
   min-width: 300px;
   box-shadow: 0 8px 28px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  transform: translateX(-100px); /* start off-screen left */
+  transition: transform 0.1s linear; /* smooth update */
 }
+
 
 .about-box:hover {
   transform: translateY(-10px);
@@ -97,18 +99,11 @@
   object-fit: cover;
   border: 5px solid #141807;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  position: relative; /* required for left/right movement */
-  animation: slideLeftRight 3s ease-in-out infinite alternate;
+  transform: scale(0.8); /* initial scale */
+  transition: transform 0.1s linear; /* smooth update */
 }
 
-@keyframes slideLeftRight {
-  0% {
-    left: -50px; /* starting position */
-  }
-  100% {
-    left: 50px; /* ending position */
-  }
-}
+
 
 
 .about-image img:hover {
@@ -129,7 +124,10 @@
   box-shadow: 0 8px 28px rgba(0,0,0,0.1);
   font-size: 21px;
   line-height: 1.6;
+  transform: translateX(-100px) scale(0.95); /* start slightly left & smaller */
+  transition: transform 0.1s linear;
 }
+
 
 /* ===============================
    Consultation Section
@@ -154,7 +152,10 @@
   justify-content: center;
   align-items: center;
   margin-left: 40px;
+  transform: translateX(-100px) scale(0.95); /* start slightly left & smaller */
+  transition: transform 0.1s linear;
 }
+
 
 .consult-text {
   flex: 1;
