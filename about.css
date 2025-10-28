@@ -99,7 +99,7 @@
   object-fit: cover;
   border: 5px solid #141807;
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  transform: scale(0.8); /* initial scale */
+  transform: scale(1.05); /* initial scale */
   transition: transform 0.1s linear; /* smooth update */
 }
 
@@ -107,7 +107,7 @@
 
 
 .about-image img:hover {
-  transform: scale(1.05);
+  transform: scale(1.10);
 }
 
 /* ===============================

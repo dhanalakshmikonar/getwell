@@ -294,3 +294,348 @@ body {
   font-size: 14px;
   margin: 0;
 }
+
+
+@media (max-width: 768px) {
+  .slider {
+    height: auto;
+  }
+
+  .slide {
+    height: 100vh;
+    background-size: cover;
+  }
+
+  .circle {
+    width: 300px;
+    height: 300px;
+    padding: 20px;
+    border-radius: 50%;
+  }
+
+  .circle h2 {
+    font-size: 1.3rem;
+  }
+
+  .circle p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .learn-btn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+/* Small Mobile (≤480px) */
+@media (max-width: 480px) {
+  .circle {
+    width: 250px;
+    height: 250px;
+    padding: 15px;
+  }
+
+  .circle h2 {
+    font-size: 1.1rem;
+  }
+
+  .circle p {
+    font-size: 0.85rem;
+  }
+
+  .learn-btn {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
+}
+
+/* ===== MOBILE RESPONSIVE (≤768px) ===== */
+@media (max-width: 768px) {
+  .about-section {
+    padding: 40px 15px;
+  }
+
+  .about-title {
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+  }
+
+  .about-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .about-box h3 {
+    font-size: 1.4rem;
+  }
+
+  .about-box h4 {
+    font-size: 1rem;
+  }
+
+  .about-box p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .about-image img {
+    width: 260px;
+    height: 260px;
+  }
+
+  .about-bottom p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: justify;
+  }
+
+  .about-consult {
+    padding: 30px 10px;
+    text-align: center;
+  }
+
+  .consult-heading {
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+
+  .consult-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .consult-text {
+    position: static !important;
+    left: auto !important;
+    top: auto !important;
+    padding: 0 10px;
+    font-size: 0.95rem;
+    text-align: justify;
+  }
+
+  .consult-image img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+  }
+}
+/* ===== MOBILE RESPONSIVE GALLERY (≤768px) ===== */
+@media (max-width: 768px) {
+  .gallery-section {
+    padding: 40px 15px 20px;
+  }
+
+  .gallery-title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* ✅ Two images per row */
+    gap: 10px;
+    justify-items: center;
+  }
+  .gallery-grid img {
+    width: 100%;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .gallery-overlay {
+    display: none; /* hide logo overlay on mobile */
+  }
+}
+
+/* ===== SMALL MOBILE (≤480px) ===== */
+@media (max-width: 480px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .gallery-grid img {
+    height: 180px;
+  }
+
+  .gallery-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* ===== MOBILE RESPONSIVE SERVICES (≤768px) ===== */
+@media (max-width: 768px) {
+  .service-cards {
+    padding: 40px 15px;
+  }
+
+  .section-heading {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .scroll-content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two cards per row on tablet/mobile */
+    gap: 15px;
+    justify-items: center;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 250px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+
+  .card-overlay h3 {
+    font-size: 1rem;
+  }
+
+  .card-overlay p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .card-icon img {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* Disease List Section */
+  .disease-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    justify-items: center;
+  }
+
+  .disease-box {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .view-more-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== SMALL MOBILE (≤480px) ===== */
+@media (max-width: 480px) {
+  .scroll-content {
+    grid-template-columns: 1fr; /* One card per row on very small devices */
+  }
+
+  .card img {
+    height: 200px;
+  }
+
+  .card-overlay h3 {
+    font-size: 1rem;
+  }
+
+  .disease-grid {
+    grid-template-columns: 1fr 1fr; /* Still two per row for compact boxes */
+  }
+
+  .section-heading {
+    font-size: 1.6rem;
+  }
+}
+
+/* Hamburger icon */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 6px;
+  z-index: 1001; /* ensures it's above everything */
+  position: relative;
+}
+
+.hamburger span {
+  width: 28px;
+  height: 3px;
+  background: #2e5932;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* X animation */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* MOBILE VIEW */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: -100%; /* hidden off screen */
+    width: 65%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 3px 0 10px rgba(0, 0, 0, 0.2);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 25px;
+    padding-left: 30px;
+    transition: all 0.4s ease;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    left: 0; /* slides in from left */
+  }
+
+  .nav-links li a {
+    font-size: 18px;
+    color: #2e5932;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .nav-links li a:hover {
+    color: #1a3f23;
+  }
+}

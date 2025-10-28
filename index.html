@@ -12,25 +12,38 @@
 <body>
 
   <!-- Navigation Bar -->
-  <header class="navbar">
-    <div class="nav-container">
-      <div class="logo">
-        <img src="img/logo.png" alt="Logo" class="logo">
-      </div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#" class="active">Home</a></li>
-          <li><a href="index.html#about">About</a></li>
-          <li><a href="index.html#gallery">Gallery</a></li>
-          <li><a href="index.html#services">Service</a></li>
-          <li><a href="index.html#contact">Contact</a></li>
-        </ul>
-      </nav>
+ <!-- Navigation Bar -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo" class="logo">
     </div>
-  </header>
+
+    <!-- Hamburger Menu -->
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html#home" class="active">Home</a></li>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#gallery">Gallery</a></li>
+        <li><a href="index.html#services">Service</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+  <script src="navbar.js"></script>
+
+</header>
+
 
   <!-- Slider Section -->
-  <section class="slider" style="padding-top: 0;">
+  <section class="slider" id="home" style="padding-top: 0;">
   <div class="slides">
 
     <!-- Slide 1 -->
@@ -93,6 +106,7 @@
       <div class="about-image">
         <img src="img/client.jpg" alt="Dr. M. Alex Pandian">
       </div>
+      <script src="about.js"></script>
     </div>
 
     
@@ -137,6 +151,7 @@
       </div>
     </div>
   </div>
+
 </section>
 
 <link rel="stylesheet" href="about.css">

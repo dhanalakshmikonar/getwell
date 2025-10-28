@@ -1,119 +1,163 @@
-let currentSlide = 0;
-const slides = document.querySelectorAll(".slide");
-const totalSlides = slides.length;
+// ===============================
+// Slide Show Section (if exists)
+// ===============================
+if (document.querySelector('.slides')) {
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slide');
+  const totalSlides = slides.length;
 
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  document.querySelector(".slides").style.transform = `translateX(-${currentSlide * 100}%)`;
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    document.querySelector('.slides').style.transform = `translateX(-${currentSlide * 100}%)`;
+  }
 }
 
+// ===============================
+// View More / View Less Toggle
+// ===============================
 const viewMoreLink = document.getElementById('viewMoreLink');
 const diseaseList = document.getElementById('diseaseList');
 
-viewMoreLink.addEventListener('click', function(e) {
-  e.preventDefault();
-  diseaseList.classList.toggle('show');
+if (viewMoreLink && diseaseList) {
+  viewMoreLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    diseaseList.classList.toggle('show');
+    viewMoreLink.textContent = diseaseList.classList.contains('show') ? 'View Less' : 'View More';
+  });
+}
 
-  // Toggle button text
-  if(diseaseList.classList.contains('show')){
-    viewMoreLink.textContent = 'View Less';
-  } else {
-    viewMoreLink.textContent = 'View More';
-  }
-});
+// ===============================
+// About Section Animations (Robust version)
+// ===============================
 
-const img = document.querySelector('.about-image img');
+// --- 1. About Image Scale on Scroll ---
+const aboutImage = document.querySelector('.about-image img');
+if (aboutImage) {
+  window.addEventListener('scroll', () => {
+    const rect = aboutImage.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
 
-window.addEventListener('scroll', () => {
-  const rect = img.getBoundingClientRect();
-  const windowHeight = window.innerHeight;
+    let visibleRatio = 1 - rect.top / windowHeight;
+    visibleRatio = Math.min(Math.max(visibleRatio, 0), 1);
 
-  // Calculate how much of the image is visible (0 to 1)
-  let visibleRatio = 1 - (rect.top / windowHeight);
-  visibleRatio = Math.min(Math.max(visibleRatio, 0), 1); // clamp between 0 and 1
+    const scaleValue = 0.8 + visibleRatio * 0.2;
+    aboutImage.style.transform = `scale(${scaleValue})`;
+  });
+}
 
-  // Scale from 0.8 to 1
-  const scaleValue = 0.8 + visibleRatio * 0.2;
-  img.style.transform = `scale(${scaleValue})`;
-});
-
+// --- 2. About Box Slide from Left ---
 const aboutBox = document.querySelector('.about-box');
+if (aboutBox) {
+  const boxObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          aboutBox.style.transform = 'translateX(0)';
+          aboutBox.style.transition = 'transform 0.8s ease-out';
+          boxObserver.unobserve(aboutBox);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+  boxObserver.observe(aboutBox);
+}
 
-window.addEventListener('scroll', () => {
-  const rect = aboutBox.getBoundingClientRect();
-  const windowHeight = window.innerHeight;
-
-  // Calculate how much of the box is visible (0 to 1)
-  let visibleRatio = 1 - (rect.top / windowHeight);
-  visibleRatio = Math.min(Math.max(visibleRatio, 0), 1); // clamp between 0 and 1
-
-  // Move from -100px (left) to 0px (final position)
-  const translateX = -100 + visibleRatio * 100;
-  aboutBox.style.transform = `translateX(${translateX}px)`;
-});
-
+// --- 3. About Bottom Slide + Scale ---
 const aboutBottom = document.querySelector('.about-bottom');
+if (aboutBottom) {
+  const bottomObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          aboutBottom.style.transform = 'translateX(0) scale(1)';
+          aboutBottom.style.transition = 'transform 0.8s ease-out';
+          bottomObserver.unobserve(aboutBottom);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+  bottomObserver.observe(aboutBottom);
+}
 
-window.addEventListener('scroll', () => {
-  const rect = aboutBottom.getBoundingClientRect();
-  const windowHeight = window.innerHeight;
-
-  // Calculate visibility ratio (0 to 1)
-  let visibleRatio = 1 - (rect.top / windowHeight);
-  visibleRatio = Math.min(Math.max(visibleRatio, 0), 1);
-
-  // Move from -100px → 0px and scale from 0.95 → 1
-  const translateX = -100 + visibleRatio * 100;
-  const scaleValue = 0.95 + visibleRatio * 0.05;
-
-  aboutBottom.style.transform = `translateX(${translateX}px) scale(${scaleValue})`;
-});
-
+// --- 4. Consult Content Slide + Scale ---
 const consultContent = document.querySelector('.consult-content');
+if (consultContent) {
+  const consultObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          consultContent.style.transform = 'translateX(0) scale(1)';
+          consultContent.style.transition = 'transform 0.8s ease-out';
+          consultObserver.unobserve(consultContent);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
+  consultObserver.observe(consultContent);
+}
 
-window.addEventListener('scroll', () => {
-  const rect = consultContent.getBoundingClientRect();
-  const windowHeight = window.innerHeight;
 
-  // Calculate visibility ratio (0 to 1)
-  let visibleRatio = 1 - (rect.top / windowHeight);
-  visibleRatio = Math.min(Math.max(visibleRatio, 0), 1);
-
-  // Slide from -100px → 0px, scale from 0.95 → 1
-  const translateX = -100 + visibleRatio * 100;
-  const scaleValue = 0.95 + visibleRatio * 0.05;
-
-  consultContent.style.transform = `translateX(${translateX}px) scale(${scaleValue})`;
-});
-
+// ===============================
+// Gallery Image Reveal Animation
+// ===============================
 const galleryImages = document.querySelectorAll('.gallery-grid img');
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      // Optional: stop observing after animation triggers once
-      observer.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.2 // triggers when 20% of image is visible
-});
+if (galleryImages.length > 0) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
 
-// Observe all gallery images
-galleryImages.forEach(img => observer.observe(img));
+  galleryImages.forEach((img) => observer.observe(img));
+}
 
+// ===============================
+// Card Reveal Animation
+// ===============================
 const cards = document.querySelectorAll('.card');
 
-const cardObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      // Optional: reveal only once
-      cardObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.2 }); // triggers when 20% of the card is visible
+if (cards.length > 0) {
+  const cardObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          cardObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.2 }
+  );
 
-cards.forEach(card => cardObserver.observe(card));
+  cards.forEach((card) => cardObserver.observe(card));
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.getElementById("hamburger");
+  const navLinks = document.getElementById("nav-links");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navLinks.classList.toggle("show");
+  });
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navLinks.classList.remove("show");
+    });
+  });
+});
+
+console.log("✅ script.js loaded successfully");
 
