@@ -159,5 +159,25 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-console.log("✅ script.js loaded successfully");
+document.addEventListener("DOMContentLoaded", () => {
+  console.log("✅ whyus.js loaded successfully");
 
+  const section = document.querySelector(".whychoose-section");
+  const boxes = document.querySelectorAll(".whychoose-box");
+  const image = document.querySelector(".whychoose-image-wrapper");
+
+  function showElements() {
+    const triggerPoint = window.innerHeight * 0.85;
+    const sectionTop = section.getBoundingClientRect().top;
+
+    // Trigger only when section is visible
+    if (sectionTop < triggerPoint) {
+      boxes.forEach((box) => box.classList.add("show-element"));
+      if (image) image.classList.add("show-element");
+    }
+  }
+
+  // Check on load and scroll
+  window.addEventListener("scroll", showElements);
+  showElements();
+});

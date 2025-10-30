@@ -1,0 +1,149 @@
+  /* Background Image Section */
+  .whychoose-wrapper {
+    position: relative;
+    background: url('img/bg.jpg') center/cover no-repeat;
+    padding: 180px 0;
+  }
+
+  .whychoose-bg {
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(2px);
+  }
+
+  /* Main White Box */
+  .whychoose-main {
+    position: relative;
+    background: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    padding: 100px 60px;
+    z-index: 2;
+    text-align: center;
+  }
+
+  /* Title */
+  .whychoose-main h2 {
+    color: #ff7a55;
+    font-weight: 700;
+    font-size: 28px;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  /* Flex Container */
+  .whychoose-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  /* Boxes */
+  .whychoose-box {
+    width: 27%;
+    background: #f6f3ff;
+    padding: 35px 25px;
+    border-radius: 15px;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+    z-index: 5;
+  }
+
+  .whychoose-box:hover {
+    transform: translateY(-6px);
+  }
+
+  .num {
+    width: 50px;
+    height: 50px;
+    background: #7b51da;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .whychoose-box h3 {
+    color: #4b2eb3;
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .whychoose-box p {
+    color: #444;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Circle Image */
+  .whychoose-circle {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    background: #fff;
+    z-index: 10;
+    flex-shrink: 0;
+  }
+
+  .whychoose-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* SVG Curved Lines */
+  .connector {
+    position: absolute;
+    width: 300px;
+    height: 150px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+  }
+
+  .left-line {
+    left: 22%;
+  }
+
+  .right-line {
+    right: 22%;
+  }
+
+  /* Responsive */
+  @media (max-width: 992px) {
+    .whychoose-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .connector {
+      display: none;
+    }
+
+    .whychoose-box {
+      width: 90%;
+      text-align: center;
+    }
+
+    .whychoose-circle {
+      width: 200px;
+      height: 200px;
+    }
+  }
+
+  
