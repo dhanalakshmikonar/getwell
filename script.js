@@ -1,5 +1,6 @@
+
 // ===============================
-// Slide Show Section (if exists)
+// Slide Show Section
 // ===============================
 if (document.querySelector('.slides')) {
   let currentSlide = 0;
@@ -27,157 +28,155 @@ if (viewMoreLink && diseaseList) {
 }
 
 // ===============================
-// About Section Animations (Robust version)
+// About Section Animations
 // ===============================
-
-// --- 1. About Image Scale on Scroll ---
 const aboutImage = document.querySelector('.about-image img');
 if (aboutImage) {
   window.addEventListener('scroll', () => {
     const rect = aboutImage.getBoundingClientRect();
     const windowHeight = window.innerHeight;
-
     let visibleRatio = 1 - rect.top / windowHeight;
     visibleRatio = Math.min(Math.max(visibleRatio, 0), 1);
-
     const scaleValue = 0.8 + visibleRatio * 0.2;
     aboutImage.style.transform = `scale(${scaleValue})`;
   });
 }
 
-// --- 2. About Box Slide from Left ---
 const aboutBox = document.querySelector('.about-box');
 if (aboutBox) {
-  const boxObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          aboutBox.style.transform = 'translateX(0)';
-          aboutBox.style.transition = 'transform 0.8s ease-out';
-          boxObserver.unobserve(aboutBox);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-  boxObserver.observe(aboutBox);
+  const aboutBoxObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        aboutBox.style.transform = 'translateX(0)';
+        aboutBox.style.transition = 'transform 0.8s ease-out';
+        aboutBoxObserver.unobserve(aboutBox);
+      }
+    });
+  }, { threshold: 0.2 });
+  aboutBoxObserver.observe(aboutBox);
 }
 
-// --- 3. About Bottom Slide + Scale ---
 const aboutBottom = document.querySelector('.about-bottom');
 if (aboutBottom) {
-  const bottomObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          aboutBottom.style.transform = 'translateX(0) scale(1)';
-          aboutBottom.style.transition = 'transform 0.8s ease-out';
-          bottomObserver.unobserve(aboutBottom);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-  bottomObserver.observe(aboutBottom);
+  const aboutBottomObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        aboutBottom.style.transform = 'translateX(0) scale(1)';
+        aboutBottom.style.transition = 'transform 0.8s ease-out';
+        aboutBottomObserver.unobserve(aboutBottom);
+      }
+    });
+  }, { threshold: 0.2 });
+  aboutBottomObserver.observe(aboutBottom);
 }
 
-// --- 4. Consult Content Slide + Scale ---
 const consultContent = document.querySelector('.consult-content');
 if (consultContent) {
-  const consultObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          consultContent.style.transform = 'translateX(0) scale(1)';
-          consultContent.style.transition = 'transform 0.8s ease-out';
-          consultObserver.unobserve(consultContent);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
+  const consultObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        consultContent.style.transform = 'translateX(0) scale(1)';
+        consultContent.style.transition = 'transform 0.8s ease-out';
+        consultObserver.unobserve(consultContent);
+      }
+    });
+  }, { threshold: 0.2 });
   consultObserver.observe(consultContent);
 }
-
 
 // ===============================
 // Gallery Image Reveal Animation
 // ===============================
 const galleryImages = document.querySelectorAll('.gallery-grid img');
-
 if (galleryImages.length > 0) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
+  const galleryObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        galleryObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
 
-  galleryImages.forEach((img) => observer.observe(img));
+  galleryImages.forEach(img => galleryObserver.observe(img));
 }
 
 // ===============================
 // Card Reveal Animation
 // ===============================
 const cards = document.querySelectorAll('.card');
-
 if (cards.length > 0) {
-  const cardObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          cardObserver.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
+  const cardObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        cardObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
 
-  cards.forEach((card) => cardObserver.observe(card));
+  cards.forEach(card => cardObserver.observe(card));
 }
 
+// ===============================
+// Hamburger Menu Toggle
+// ===============================
 document.addEventListener("DOMContentLoaded", () => {
   const hamburger = document.getElementById("hamburger");
   const navLinks = document.getElementById("nav-links");
 
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navLinks.classList.toggle("show");
-  });
-
-  document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      navLinks.classList.remove("show");
+  if (hamburger && navLinks) {
+    hamburger.addEventListener("click", () => {
+      hamburger.classList.toggle("active");
+      navLinks.classList.toggle("show");
     });
-  });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("active");
+        navLinks.classList.remove("show");
+      });
+    });
+  }
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-  console.log("✅ whyus.js loaded successfully");
+// ===============================
+// WHY CHOOSE US Section Animation
+// ===============================
+const whychooseItems = document.querySelectorAll(".whychoose-box, .whychoose-circle");
 
-  const section = document.querySelector(".whychoose-section");
-  const boxes = document.querySelectorAll(".whychoose-box");
-  const image = document.querySelector(".whychoose-image-wrapper");
+if (whychooseItems.length > 0) {
+  const whychooseObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        whychooseObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.2 });
 
-  function showElements() {
-    const triggerPoint = window.innerHeight * 0.85;
-    const sectionTop = section.getBoundingClientRect().top;
+  whychooseItems.forEach(item => whychooseObserver.observe(item));
+}
 
-    // Trigger only when section is visible
-    if (sectionTop < triggerPoint) {
-      boxes.forEach((box) => box.classList.add("show-element"));
-      if (image) image.classList.add("show-element");
-    }
+// ===============================
+// WHY CHOOSE US Box Click Highlight
+// ===============================
+const chooseBoxes = document.querySelectorAll('.whychoose-box');
+if (chooseBoxes.length > 0) {
+  chooseBoxes.forEach(box => {
+    box.addEventListener('click', () => {
+      chooseBoxes.forEach(b => b.classList.remove('active'));
+      box.classList.add('active');
+    });
+  });
+}
+
+window.addEventListener("load", () => {
+  const whychooseWrapper = document.querySelector(".whychoose-wrapper");
+  if (whychooseWrapper) {
+    // Add the class after short delay for smooth entry
+    setTimeout(() => {
+      whychooseWrapper.classList.add("loaded");
+    }, 200); // 200ms delay gives a natural “on load” feel
   }
-
-  // Check on load and scroll
-  window.addEventListener("scroll", showElements);
-  showElements();
 });
