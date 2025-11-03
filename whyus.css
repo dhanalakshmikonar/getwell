@@ -243,3 +243,110 @@
 .whychoose-circle {
   transition-delay: 0.2s;
 }
+
+@media (max-width: 1024px) {
+  .whychoose-wrapper {
+    padding: 40px 20px;
+  }
+
+  .whychoose-main h2 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .whychoose-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .whychoose-box {
+    width: 90%;
+    text-align: center;
+  }
+
+  .whychoose-box h3 {
+    font-size: 1.3rem;
+  }
+
+  .whychoose-box p {
+    font-size: 1rem;
+  }
+
+  .whychoose-circle {
+    width: 220px;
+    height: 220px;
+  }
+
+  .whychoose-circle img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .connector {
+    display: none; /* hide SVG lines on tablet and smaller */
+  }
+}
+
+@media (max-width: 768px) {
+  .whychoose-wrapper {
+    padding: 30px 15px;
+  }
+
+  .whychoose-main h2 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  .whychoose-box {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .num {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+
+  .whychoose-circle {
+    width: 180px;
+    height: 180px;
+  }
+
+  .whychoose-box h3 {
+    font-size: 1.2rem;
+  }
+
+  .whychoose-box p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .whychoose-wrapper {
+    padding: 20px 10px;
+  }
+
+  .whychoose-main h2 {
+    font-size: 1.3rem;
+  }
+
+  .whychoose-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .whychoose-box h3 {
+    font-size: 1.1rem;
+  }
+
+  .whychoose-box p {
+    font-size: 0.9rem;
+  }
+
+  .num {
+    font-size: 1.3rem;
+  }
+}
