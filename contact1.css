@@ -10,7 +10,7 @@ body {
 /* Header Section */
 .page-header {
   position: relative;
-  height: 45vh;
+  height: 55vh;
   background: url('img/contact.jpg') center/cover no-repeat;
   display: flex;
   flex-direction: column;

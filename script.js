@@ -180,3 +180,4 @@ window.addEventListener("load", () => {
     }, 200); // 200ms delay gives a natural “on load” feel
   }
 });
+

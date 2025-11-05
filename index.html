@@ -15,13 +15,13 @@
  <!-- Navigation Bar -->
 <header class="navbar">
   <div class="nav-container">
-    <!-- Logo and Text -->
+    <!-- Logo and Site Name -->
     <div class="logo-section">
       <img src="img/logo.png" alt="Logo" class="logo">
-      <span class="site-name">Getwell Herbalcare</span>
+      <h1 class="site-name">Getwell Herbalcare</h1>
     </div>
 
-    <!-- Hamburger Menu -->
+    <!-- Hamburger Menu (for mobile) -->
     <div class="hamburger" id="hamburger">
       <span></span>
       <span></span>
@@ -34,13 +34,15 @@
         <li><a href="index.html#home" class="active">Home</a></li>
         <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#gallery">Gallery</a></li>
-        <li><a href="index.html#services">Service</a></li>
+        <li><a href="index.html#services">Services</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
   </div>
+
   <script src="navbar.js"></script>
 </header>
+
 
 
 
@@ -81,6 +83,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+
 ">
 
       <div class="circle">
@@ -223,7 +226,7 @@
       <img src="img/clinic.jpg" alt="Gallery Image 5" style="animation-delay: 2s;">
       <img src="img/clinic2.jpg" alt="Gallery Image 6"style="animation-delay: 2s;">
       <img src="img/gw3.jpg" alt="Gallery Image 1"style="animation-delay: 2s;">
-      <img src="img/gw4.jpg" alt="Gallery Image 2"style="animation-delay: 2s;">
+      <img src="img/img.jpg" alt="Gallery Image 2"style="animation-delay: 2s;">
       <img src="img/clinics.jpg" alt="Gallery Image 3"style="animation-delay: 2s;">
     </div>
   </div>
@@ -514,10 +517,10 @@
 </section>
 
 <section class="contact1-section">
-  <div class="contact1-container" style="display: flex; align-items: flex-start; gap: 20px; flex-wrap: wrap;">
-    
-    <!-- Contact Info -->
-    <div class="contact1-info" style="flex: 1; min-width: 300px;">
+  <div class="contact1-container">
+
+    <!-- Contact Info (Left) -->
+    <div class="contact1-info">
       <h2>Contact Us</h2>
 
       <div class="contact1-item">
@@ -531,16 +534,12 @@
 
       <div class="contact1-item">
         <i class="fa-solid fa-phone" style="color: rgb(214, 240, 120);"></i>
-        <p style="margin: 0;">
-          <a href="tel:+916369892833">+91 6369 892 833</a>
-        </p>
+        <p style="margin: 0;"><a href="tel:+916369892833">+91 6369 892 833</a></p>
       </div>
 
       <div class="contact1-item">
         <i class="fa-solid fa-envelope" style="color: rgb(214, 240, 120);"></i>
-        <p style="margin: 0;">
-          <a href="mailto:getwellherbalcare@gmail.com">getwellherbalcare@gmail.com</a>
-        </p>
+        <p style="margin: 0;"><a href="mailto:getwellherbalcare@gmail.com">getwellherbalcare@gmail.com</a></p>
       </div>
 
       <div class="contact1-item">
@@ -553,45 +552,45 @@
       </div>
     </div>
 
-    <!-- Map -->
-    <div class="contact1-map" style="flex: 1; min-width: 300px; height: 400px;">
+    <!-- ✅ QR Scanner (Middle) -->
+    <div class="contact1-scanner">
+      <h3>Scan to Connect</h3>
+      <img src="img/qr-code.png" alt="Getwell Herbalcare QR Code">
+      <p>Scan this QR code to reach us instantly!</p>
+    </div>
+
+    <!-- Map (Right) -->
+    <div class="contact1-map">
       <iframe
         src="https://www.google.com/maps?q=44,Irudhaya%20Illam,Bell%20Amoroses%20Colony,Court%20Opp,Palayamkottai,Tirunelveli&output=embed"
         width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy">
       </iframe>
     </div>
-
   </div>
 </section>
 
-<!-- ✅ Add Font Awesome -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-/>
 
-<!-- ✅ Link to updated CSS -->
+<!-- ✅ Font Awesome -->
+<link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- ✅ CSS file -->
 <link rel="stylesheet" href="contact1.css">
 
-<!-- Social Icons -->
+<!-- ✅ Social Icons -->
 <div class="social-row">
-  <a href="https://www.facebook.com/profile.php?id=61577969558620" 
-     class="social-icon facebook" target="_blank" aria-label="Facebook">
+  <a href="https://www.facebook.com/profile.php?id=61577969558620" class="social-icon facebook" target="_blank">
     <i class="fab fa-facebook-f"></i>
   </a>
-
-  <a href="https://www.instagram.com/getwell_herbal_care/" 
-     class="social-icon instagram" target="_blank" aria-label="Instagram">
+  <a href="https://www.instagram.com/getwell_herbal_care/" class="social-icon instagram" target="_blank">
     <i class="fab fa-instagram"></i>
   </a>
-
-  <a href="https://www.linkedin.com/in/get-well-herbal-care-hospital-97a85a372" 
-     class="social-icon linkedin" target="_blank" aria-label="LinkedIn">
+  <a href="https://www.linkedin.com/in/get-well-herbal-care-hospital-97a85a372" class="social-icon linkedin" target="_blank">
     <i class="fab fa-linkedin-in"></i>
   </a>
 </div>
 
-<!-- Footer -->
+<!-- ✅ Footer -->
 <footer class="footer-section">
   <div class="footer-overlay"></div>
   <p class="footer-bottom">
