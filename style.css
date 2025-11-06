@@ -20,7 +20,8 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(90deg, #87bdb3, #72a89b);
+  /* === FIX: Updated to the solid background color === */
+  background-color: #1f7c7a; 
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   transition: all 0.3s ease;
