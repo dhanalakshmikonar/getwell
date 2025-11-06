@@ -164,6 +164,40 @@ body {
   box-sizing: border-box;
 }
 
+/* 📱 Responsive for Tablets & Mobiles */
+@media (max-width: 768px) {
+  .bg {
+    height: 60vh;
+    background-size: contain;   /* ensures full image visible */
+    background-position: center;
+  }
+
+  .bgs2 {
+    height: 50vh;
+    clip-path: inset(0 0 0 0);  /* remove crop for smaller screens */
+    transform: none;            /* no upward shift */
+    background-size: contain;   /* show full image */
+    background-position: center;
+  }
+}
+
+/* 🧭 Small Mobile Screens */
+@media (max-width: 480px) {
+  .bg {
+    height: 50vh;
+    background-size: contain;
+    background-position: center;
+  }
+
+  .bgs2 {
+    height: 45vh;
+    clip-path: none;
+    transform: none;
+    background-size: contain;
+    background-position: center;
+  }
+}
+
 /* Circle design */
 /* Background image or pattern so blur is visible */
 .bg {
@@ -198,6 +232,7 @@ body {
   border-radius: 20px;
   box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
 }
+
 
 /* Circle design */
 /* Slide container */
