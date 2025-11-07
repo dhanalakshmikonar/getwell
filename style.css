@@ -168,9 +168,12 @@ body {
 @media (max-width: 768px) {
   .bg {
     height: 60vh;
-    background-size: contain;   /* ensures full image visible */
-    background-position: center;
+    background-image: url('img/mobile-bg.png'); /* <-- your mobile image link here */
+    background-size: contain; /* ensures the full image is visible */
+   
   }
+
+
 
   .bgs2 {
     height: 50vh;
